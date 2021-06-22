@@ -1,0 +1,30 @@
+commands:
+
+  # Date and Time
+  - command:
+      inputs:
+        - what time is it
+        - what's the time
+      entity: time
+      action: what_time_is_it
+  - command:
+      inputs:
+        - what day is it today
+        - when is today
+      entity: time
+      action: when_is_it_today
+
+  # Weather
+  - command:
+      inputs:
+        - what's the weather
+        - check the weather
+      entity: weather
+      action: check_the_weather
+  
+  # Open Browser
+  - command:
+      inputs:
+        - open website
+      entity: browser
+      action: open_website

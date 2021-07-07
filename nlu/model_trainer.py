@@ -11,7 +11,7 @@ from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
 
 
-class ChatModelTrainer:
+class ModelTrainer:
     __words, __classes, __documents, __ignored_chars = [], [], [], ['?', '!', '.', ',']
     __lemmatizer = WordNetLemmatizer()
 
@@ -19,11 +19,11 @@ class ChatModelTrainer:
         pass
 
     def populate_data(self):
-        training_data = yaml.safe_load(open(file='training_data.yml', mode='r', encoding='utf-8').read())
+        training_data = yaml.safe_load(open(file='dataset.yml', mode='r', encoding='utf-8').read())
 
-        for intents in training_data['intents']:
-            tag = intents['intent']['tag']
-            patterns = intents['intent']['patterns']
+        for scenarios in training_data['scenarios']:
+            tag = scenarios['intent']['tag']
+            patterns = scenarios['intent']['patterns']
             for pattern in patterns:
                 words = nltk.word_tokenize(pattern)
                 self.__words.extend(words)
@@ -72,7 +72,7 @@ class ChatModelTrainer:
         sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
         model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
         hist = model.fit(numpy.array(train_x), numpy.array(train_y), epochs=256, batch_size=5, verbose=True)
-        model.save('trained_model/chat_model.h5', hist)
+        model.save('trained_model/model.h5', hist)
         return model
 
     def start_training(self):
@@ -82,4 +82,4 @@ class ChatModelTrainer:
 
 
 if __name__ == '__main__':
-    ChatModelTrainer().start_training()
+    ModelTrainer().start_training()

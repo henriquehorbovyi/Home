@@ -7,7 +7,7 @@ from vosk import Model, KaldiRecognizer
 
 
 class Listener:
-    __VA_NAME = "zoe"
+    __VA_NAME = "lisa"
     __ROOT_DIR = os.path.abspath("core")
 
     def __init__(self, voice_model_path='en-model'):
@@ -42,6 +42,4 @@ class Listener:
     def start(self, on_listened):
         thread = threading.Thread(target=self.listen, args=(on_listened,), daemon=True)
         thread.start()
-        thread.join(timeout=2.5)
-
         print("Listening...")

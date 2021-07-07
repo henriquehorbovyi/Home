@@ -1,5 +1,9 @@
 model/chatting/trained_model/
 model/commands/trained_model/
+nlu/trained_model/
 en-model
 ua-model
 .idea
+
+transcript.txt
+core/said.wav

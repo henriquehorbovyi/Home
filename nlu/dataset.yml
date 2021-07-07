@@ -1,0 +1,107 @@
+scenarios:
+  - intent:
+      tag: time
+      action: what_time_is_it
+      patterns:
+        - what time is it?
+        - what's the time?
+        - what hour now?
+        - what time is it now?
+        - what time now?
+        - what's the time
+      responses: [null]
+  - intent:
+      tag: datetime
+      action: what_date_is_it
+      patterns:
+        - what date is it?
+        - what date is it today?
+        - when is it today?
+        - when is today?
+        - when are we?
+      responses: [null]
+  - intent:
+      tag: weather
+      action: check_the_weather
+      patterns:
+        - what's the weather?
+        - check the weather
+        - what's the forecast for today?
+        - check forecast
+        - what's the forecast
+        - whats the weather?
+        - what is the weather now
+        - check the forecast
+      responses: [null]
+  - intent:
+      tag: wikipedia
+      action: search
+      patterns:
+        - search on wiki <query>
+        - search on wikipedia <query>
+        - search about <query>
+        - search <query> on wikipedia
+        - search <query> on wiki
+        - search on wikipedia about <query>
+        - search on wiki about <query>
+      resposes: [null]
+  - intent:
+      tag: greeting
+      action:
+      patterns:
+        - Hi
+        - hello
+        - hey
+        - hi
+        - hi Lisa
+        - Hello
+        - greetings
+        - whats up?
+        - what's up?
+        - hey hey
+        - hey what's up?
+        - how is it going?
+      responses:
+        - Hey hey
+        - Hello
+        - Hey how are you?
+        - Hi
+        - hey, how may I help you
+  - intent:
+      tag: goodbye
+      action:
+      patterns:
+        - bye
+        - bye bye
+        - goodbye
+        - good-bye
+        - see ya
+        - see you later
+        - see you soon
+        - see you again
+        - until tomorrow
+        - have a good day
+        - have a good one
+      responses:
+        - Bye Human
+        - See you
+        - See you again later
+        - goodbye
+        - okay, see you
+        - anytime you need, i'll be here
+  - intent:
+      tag: introduce
+      action:
+      patterns:
+        - who are you
+        - what is your name?
+        - who are you?
+        - whats your name
+        - what's your name?
+        - who you are?
+      responses:
+        - my name is Lisa
+        - Hey, I'm Lisa
+        - My creator called me Lisa
+        - call me Lisa
+        - I'm just a bunch of 0s & 1s trying to understand what you are saying, but you can call me Lisa
